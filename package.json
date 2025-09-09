@@ -5,7 +5,9 @@
   "default": "index.html",
   "type": "module",
   "scripts": {
-    "start": "parcel index.html",
+    "start": "concurrently \"npm:backend\" \"npm:frontend\"",
+    "backend": "node backend/server.js",
+    "frontend": "parcel index.html",
     "build": "parcel build index.html",
     "test": "node ./script/tddScript.js",
     "cypress": "cypress open",
@@ -21,6 +23,7 @@
     "@babel/core": "^7.25.2",
     "@babel/preset-env": "^7.25.4",
     "babel-jest": "^29.7.0",
+    "concurrently": "^9.2.1",
     "cross-spawn": "^7.0.3",
     "cypress": "^13.13.3",
     "eslint": "^9.10.0",
@@ -29,6 +32,11 @@
     "parcel": "^2.12.0"
   },
   "dependencies": {
-    "parcel-jest-base": "file:"
+    "cors": "^2.8.5",
+    "csv-parser": "^3.2.0",
+    "express": "^5.1.0",
+    "parcel-jest-base": "file:",
+    "pdfkit": "^0.17.2",
+    "qrcode": "^1.5.4"
   }
 }
