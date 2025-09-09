@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "csv-parser": "^3.2.0",
+    "csv-writer": "^1.6.0",
+    "express": "^5.1.0",
+    "numero-a-letras": "^1.0.6",
+    "qrcode": "^1.5.4"
+  }
+}

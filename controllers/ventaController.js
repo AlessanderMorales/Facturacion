@@ -1,7 +1,6 @@
 const conexion = require('../db/conexion');
 
 function crearVenta(venta, callback) {
-  // Insertar venta
   conexion.query(
     'INSERT INTO Venta (cliente_id, total, qr) VALUES (?, ?, ?)',
     [venta.cliente.id, venta.total, venta.qr],
@@ -9,8 +8,6 @@ function crearVenta(venta, callback) {
       if(err) return callback(err);
 
       const ventaId = result.insertId;
-
-      // Insertar items
       venta.items.forEach(item => {
         conexion.query(
           'INSERT INTO ItemVenta (venta_id, producto_id, cantidad, subtotal) VALUES (?, ?, ?, ?)',
