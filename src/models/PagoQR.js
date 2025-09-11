@@ -1,16 +1,26 @@
+// src/modules/PagoQR.js
 import Pago from "./Pago.js";
+import QRCode from "qrcode"; // Necesitas instalar la librería 'qrcode'
 
 export default class PagoQR extends Pago {
-  constructor(monto, monto_en_letras, codigoQR) {
-    super(monto, monto_en_letras);
-    this.codigoQR = codigoQR || this.generarQR();
-  }
+    constructor(monto, monto_en_letras, codigoQR) {
+        super();
+        this.monto = monto;
+        this.monto_en_letras = monto_en_letras;
+        this.codigoQR = codigoQR;
+    }
 
-  generarQR() {
-    return `QR-${Date.now()}-${Math.floor(Math.random() * 1000)}`;
-  }
+    generar_QR() {
+        return new Promise((resolve, reject) => {
+            QRCode.toString(this.codigoQR, { type: 'terminal' }, (err, url) => {
+                if (err) reject(err);
+                resolve(url);
+            });
+        });
+    }
 
-  procesarPago() {
-    return `Pago mediante QR generado: ${this.codigoQR}`;
-  }
+    realizar_pago() {
+        console.log(`Pago con QR realizado por ${this.monto}.`);
+        return true;
+    }
 }

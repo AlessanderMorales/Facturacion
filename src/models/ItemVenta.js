@@ -1,16 +1,12 @@
-import Producto from "./Producto.js";
-
+// src/modules/ItemVenta.js
 export default class ItemVenta {
-  constructor(producto, cantidad) {
-    if (!(producto instanceof Producto)) {
-      throw new Error("El item debe contener un Producto válido.");
+    constructor(cantidad, producto) {
+        this.cantidad = cantidad;
+        this.producto = producto;
+        this.subtotal = this.calcular_subtotal();
     }
-    this.producto = producto;
-    this.cantidad = cantidad;
-    this.subtotal = this.calcularSubtotal();
-  }
 
-  calcularSubtotal() {
-    return this.producto.precio * this.cantidad;
-  }
+    calcular_subtotal() {
+        return this.cantidad * this.producto.precio;
+    }
 }

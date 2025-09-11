@@ -19,17 +19,36 @@
     "conclusion": "neutral"
   },
   {
-    "sha": "HEAD",
+    "sha": "aa114b6143dce10d589d4ca146a15df085b61998",
     "author": "JaimeTadeo",
     "commit": {
       "date": "2025-09-11T19:24:49.000Z",
       "message": "cambios al presenter, y al servidor",
-      "url": "https://github.com/AlessanderMorales/Facturacion/commit/HEAD"
+      "url": "https://github.com/AlessanderMorales/Facturacion/commit/aa114b6143dce10d589d4ca146a15df085b61998"
     },
     "stats": {
       "total": 2,
       "additions": 2,
       "deletions": 0,
+      "date": "2025-09-11"
+    },
+    "coverage": 0,
+    "test_count": 0,
+    "failed_tests": 0,
+    "conclusion": "neutral"
+  },
+  {
+    "sha": "HEAD",
+    "author": "JaimeTadeo",
+    "commit": {
+      "date": "2025-09-11T21:26:09.000Z",
+      "message": "cambios a las clases",
+      "url": "https://github.com/AlessanderMorales/Facturacion/commit/HEAD"
+    },
+    "stats": {
+      "total": 750,
+      "additions": 407,
+      "deletions": 343,
       "date": "2025-09-11"
     },
     "coverage": 0,
