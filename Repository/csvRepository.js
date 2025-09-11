@@ -125,8 +125,14 @@ const saveVentaTransaction = async (ventaData) => {
     return nextVentaId;
 };
 
+
+const readAll = async (fileName) => {
+    return await readCSV(fileName);
+};
+
 module.exports = {
     findById,
     findMultipleByIds,
-    saveVentaTransaction
+    saveVentaTransaction,
+    readAll
 };
